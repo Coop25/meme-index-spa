@@ -30,7 +30,7 @@ const RandomMeme = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/files/random`);
+      const response = await fetch(process.env.API_BASE_URL+`/files/random`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

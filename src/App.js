@@ -30,7 +30,7 @@ function App() {
 
 
   const handleUpload = (formData) => {
-    fetch('/files/upload', {
+    fetch(process.env.API_BASE_URL+'/files/upload', {
       method: 'POST',
       body: formData,
     })
