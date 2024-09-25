@@ -44,7 +44,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
         const updatedItem = { ...item, description, tags };
 
         try {
-            const response = await fetch(`/files/${item.id}/tags`, {
+            const response = await fetch(`${window.location.protocol}//${window.location.hostname}:8080`+`/files/${item.id}/tags`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

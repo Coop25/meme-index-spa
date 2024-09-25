@@ -30,7 +30,7 @@ const RandomMeme = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/files/random`);
+      const response = await fetch(`${window.location.protocol}//${window.location.hostname}:8080`+`/files/random`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

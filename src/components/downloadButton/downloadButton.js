@@ -5,7 +5,7 @@ const DownloadButton = ({ fileId }) => {
 
     useEffect(() => {
         // Fetch the signed URL when the component mounts
-        fetch(`/files/${fileId}/signed-url`)
+        fetch(`${window.location.protocol}//${window.location.hostname}:8080`+`/files/${fileId}/signed-url`)
             .then(response => response.json())
             .then(data => {
                 if (data && data.signedUrl) {

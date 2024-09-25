@@ -13,8 +13,8 @@ const MemeTable = ({ selectedTags }) => {
             try {
                 const response = await fetch(
                     selectedTags.length > 0
-                        ? `/tags/search?tags=${encodeURIComponent(selectedTags.join(","))}&page=${page}`
-                        : `/files/list?page=${page}`
+                        ? `${window.location.protocol}//${window.location.hostname}:8080`+`/tags/search?tags=${encodeURIComponent(selectedTags.join(","))}&page=${page}`
+                        : `${window.location.protocol}//${window.location.hostname}:8080`+`/files/list?page=${page}`
                 );
                 const data = await response.json();
                 console.log('Fetched data:', data);

@@ -30,7 +30,7 @@ function App() {
 
 
   const handleUpload = (formData) => {
-    fetch('/files/upload', {
+    fetch(`${window.location.protocol}//${window.location.hostname}:8080`+'/files/upload', {
       method: 'POST',
       body: formData,
     })

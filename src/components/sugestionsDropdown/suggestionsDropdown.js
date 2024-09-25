@@ -8,7 +8,7 @@ const SuggestionsDropdown = ({ inputValue, onSuggestionClick }) => {
   useEffect(() => {
     if (inputValue.trim() !== '') {
       // Fetch suggestions based on the input value
-      fetch(`/tags/autocomplete?query=${inputValue}`)
+      fetch(`${window.location.protocol}//${window.location.hostname}:8080`+`/tags/autocomplete?query=${inputValue}`)
         .then(response => response.json())
         .then(data => setSuggestions(data))
         .catch(error => console.error('Error fetching suggestions:', error));
