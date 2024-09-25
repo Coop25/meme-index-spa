@@ -30,19 +30,19 @@ function App() {
 
 
   const handleUpload = (formData) => {
-    fetch(process.env.API_BASE_URL+'/files/upload', {
+    fetch('http://localhost:8080' + '/files/upload', {
       method: 'POST',
       body: formData,
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-      handleCloseUpload();
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      handleCloseUpload();
-    });
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+        handleCloseUpload();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        handleCloseUpload();
+      });
   };
 
   const handleHomeClick = () => {
@@ -63,7 +63,7 @@ function App() {
             <Button variant="primary" onClick={handleShow} className="mr-2">
               Open Search Box
             </Button>
-            
+
             <Button variant="secondary" onClick={handleShowUpload} className="mr-2">
               Upload File
             </Button>

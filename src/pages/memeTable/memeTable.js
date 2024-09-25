@@ -13,47 +13,47 @@ const MemeTable = ({ selectedTags }) => {
             try {
                 const response = await fetch(
                     selectedTags.length > 0
-                        ? process.env.API_BASE_URL+`/tags/search?tags=${encodeURIComponent(selectedTags.join(","))}&page=${page}`
-                        : process.env.API_BASE_URL+`/files/list?page=${page}`
+                        ? 'http://localhost:8080' + `/tags/search?tags=${encodeURIComponent(selectedTags.join(","))}&page=${page}`
+                        : 'http://localhost:8080' + `/files/list?page=${page}`
                 );
-                const data = await response.json();
-                console.log('Fetched data:', data);
-                if (data.memes.length > 0) {
-                    setData(data.memes); // Update items state with fetched data
-                    setPageCount(data.pageCount); // Update page count
-                } else {
-                    setData([]);
-                    setPageCount(0);
-                }
+const data = await response.json();
+console.log('Fetched data:', data);
+if (data.memes.length > 0) {
+    setData(data.memes); // Update items state with fetched data
+    setPageCount(data.pageCount); // Update page count
+} else {
+    setData([]);
+    setPageCount(0);
+}
             } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+    console.error('Error fetching data:', error);
+}
         };
 
-        fetchData();
+fetchData();
     }, [selectedTags, page]);
 
-    const handleNextPage = () => {
-        setPage(prevPage => prevPage + 1);
-    };
+const handleNextPage = () => {
+    setPage(prevPage => prevPage + 1);
+};
 
-    const handlePrevPage = () => {
-        setPage(prevPage => Math.max(prevPage - 1, 1));
-    };
+const handlePrevPage = () => {
+    setPage(prevPage => Math.max(prevPage - 1, 1));
+};
 
-    return (
-        <div className="MemeTable">
-            <div className="pagination-buttons">
-                <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
-                <button onClick={handleNextPage} disabled={page >= pageCount}>Next</button>
-            </div>
-            <CardTable items={memeData} />
-            <div className="pagination-buttons">
-                <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
-                <button onClick={handleNextPage} disabled={page >= pageCount}>Next</button>
-            </div>
+return (
+    <div className="MemeTable">
+        <div className="pagination-buttons">
+            <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
+            <button onClick={handleNextPage} disabled={page >= pageCount}>Next</button>
         </div>
-    );
+        <CardTable items={memeData} />
+        <div className="pagination-buttons">
+            <button onClick={handlePrevPage} disabled={page === 1}>Previous</button>
+            <button onClick={handleNextPage} disabled={page >= pageCount}>Next</button>
+        </div>
+    </div>
+);
 };
 
 export default MemeTable;

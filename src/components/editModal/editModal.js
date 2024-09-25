@@ -44,7 +44,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
         const updatedItem = { ...item, description, tags };
 
         try {
-            const response = await fetch(process.env.API_BASE_URL+`/files/${item.id}/tags`, {
+            const response = await fetch('http://localhost:8080' + `/files/${item.id}/tags`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
         }
     };
 
-    
+
 
     const handleSuggestionClick = (suggestion) => {
         if (!tags.includes(suggestion)) {
@@ -106,7 +106,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
                     <div className="ml-3 text-section">
                         <Form>
                             <Form.Group controlId="formTags">
-                                <Form.Label>Tags</Form.Label>   
+                                <Form.Label>Tags</Form.Label>
                                 <Form.Control
                                     type="text"
                                     value={tagInput}
