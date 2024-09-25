@@ -1,0 +1,12 @@
+.edit-modal .modal-dialog {
+    width: 80%;
+    max-width: 80%;
+  }
+  
+  .content-section {
+    margin-right: 20px; /* Add space between content and text */
+  }
+  
+  .text-section {
+    flex-basis: 40%;
+  }

@@ -1,0 +1,77 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar {
+    background-color: #1f1f1f !important;
+}
+
+.navbar-brand,
+.nav-link,
+.btn {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border-color: #ffffff !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28%255, %255, %255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+.card {
+    background-color: #1f1f1f;
+    border: 1px solid #333333;
+}
+
+.button-container .new-meme-button,
+.button-container .download-button {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+}
+
+.button-container .new-meme-button:hover,
+.button-container .download-button:hover {
+    background-color: #555555;
+}
+
+.tag {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.form-control {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+}
+
+.form-control::placeholder {
+    color: #aaaaaa;
+}
+
+.btn-primary {
+    background-color: #333333;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #555555;
+}
+
+.btn-secondary {
+    background-color: #555555;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #777777;
+}

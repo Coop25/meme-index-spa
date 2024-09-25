@@ -1,0 +1,74 @@
+.random-meme-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align items to the start of the container */
+  align-items: center;
+  min-height: 100vh;
+  /* Ensure the container takes at least the full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  /* Limit the width of the card */
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  /* Add some space below the card */
+}
+
+.content-image,
+.content-video,
+.content-audio {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.tags {
+  margin-top: auto;
+  /* Push tags to the bottom */
+  padding-top: 10px;
+  /* Add padding at the top of the tags area */
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.new-meme-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  /* Add bottom margin to create space below the button */
+}
+
+.new-meme-button:hover {
+  background-color: #0056b3;
+}

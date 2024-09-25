@@ -1,0 +1,18 @@
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .selected-tags .btn {
+    background-color: #333333; /* Dark button background */
+    color: #ffffff; /* Light button text */
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 4px 8px;
+  }
+  
+  .selected-tags .btn:hover {
+    background-color: #444444; /* Darker button background on hover */
+  }

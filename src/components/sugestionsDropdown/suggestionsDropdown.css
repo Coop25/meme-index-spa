@@ -1,0 +1,26 @@
+.dropdown-menu {
+    background-color: #1f1f1f;
+    /* Dark background color */
+    border: 1px solid #333333;
+    /* Dark border color */
+}
+
+.dropdown-item {
+    color: #ffffff;
+    /* Light text color */
+    border-bottom: 1px solid #333333;
+    /* Bottom border for each item */
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+    /* Remove bottom border for the last item */
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #333333;
+    /* Darker background on hover/focus */
+    color: #ffffff;
+    /* Light text color */
+}
