@@ -121,6 +121,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
                                 <SuggestionsDropdown
                                     inputValue={tagInput}
                                     onSuggestionClick={handleSuggestionClick}
+                                    selectedTags={tags}
                                 />
                                 <Tags tags={tags} onTagRemove={handleTagRemove} />
                             </Form.Group>

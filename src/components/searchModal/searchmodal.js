@@ -49,6 +49,7 @@ function SearchModal({ show, handleClose, handleSearch }) {
           <SuggestionsDropdown
             inputValue={searchTerm}
             onSuggestionClick={handleRecommendationClick}
+            selectedTags={selectedTags}
           />
         </div>
       </Modal.Body>

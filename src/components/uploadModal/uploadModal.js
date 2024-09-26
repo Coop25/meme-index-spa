@@ -95,12 +95,18 @@ const UploadModal = ({ show, handleClose, handleUpload }) => {
               type="text"
               value={tagInput}
               onChange={handleTagInputChange}
-              onKeyPress={(e) => e.key === 'Enter' && handleTagAdd()}
+              onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleTagAdd();
+                  }
+              }}
               autoComplete="off" // Disable browser autocomplete
             />
             <SuggestionsDropdown
               inputValue={tagInput}
               onSuggestionClick={handleSuggestionClick}
+              selectedTags={tags}
             />
             <div className="mt-3">
               <Tags tags={tags} onTagRemove={handleTagRemove} />
