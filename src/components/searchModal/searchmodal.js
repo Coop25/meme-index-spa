@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Modal, Button, FormControl } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import SuggestionsDropdown from '../sugestionsDropdown/suggestionsDropdown';
@@ -9,6 +9,7 @@ function SearchModal({ show, handleClose, handleSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState([]);
   const navigate = useNavigate();
+  const inputRef = useRef(null);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -17,6 +18,7 @@ function SearchModal({ show, handleClose, handleSearch }) {
   const handleRecommendationClick = (recommendation) => {
     setSelectedTags([...selectedTags, recommendation]);
     setSearchTerm('');
+    inputRef.current.focus();
   };
 
   const handleTagRemove = (tagToRemove) => {
@@ -45,6 +47,7 @@ function SearchModal({ show, handleClose, handleSearch }) {
             value={searchTerm}
             onChange={handleSearchChange}
             className="mb-3"
+            ref={inputRef}
           />
           <SuggestionsDropdown
             inputValue={searchTerm}

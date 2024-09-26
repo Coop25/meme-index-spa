@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import SuggestionsDropdown from '../sugestionsDropdown/suggestionsDropdown';
 import Tags from '../tags/tags';
@@ -8,6 +8,7 @@ const UploadModal = ({ show, handleClose, handleUpload }) => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState('');
+  const inputRef = useRef(null);
   
   useEffect(() => {
     if (!show) {
@@ -39,6 +40,7 @@ const UploadModal = ({ show, handleClose, handleUpload }) => {
     if (tagInput.trim() && !tags.includes(tagInput.trim())) {
       setTags([...tags, tagInput.trim()]);
       setTagInput('');
+      inputRef.current.focus();
     }
   };
 
@@ -102,6 +104,7 @@ const UploadModal = ({ show, handleClose, handleUpload }) => {
                   }
               }}
               autoComplete="off" // Disable browser autocomplete
+              ref={inputRef}
             />
             <SuggestionsDropdown
               inputValue={tagInput}

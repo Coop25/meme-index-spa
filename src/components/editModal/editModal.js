@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import DownloadButton from '../downloadButton/downloadButton';
 import SuggestionsDropdown from '../sugestionsDropdown/suggestionsDropdown';
@@ -9,6 +9,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
     const [description, setDescription] = useState('');
     const [tags, setTags] = useState([]);
     const [tagInput, setTagInput] = useState('');
+    const inputRef = useRef(null);
 
     useEffect(() => {
         if (item) {
@@ -33,6 +34,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
         if (tagInput.trim() && !tags.includes(tagInput.trim())) {
             setTags([...tags, tagInput.trim()]);
             setTagInput('');
+            inputRef.current.focus();
         }
     };
 
@@ -117,6 +119,7 @@ const EditModal = ({ show, handleClose, item, handleSave }) => {
                                             handleTagAdd();
                                         }
                                     }}
+                                    ref={inputRef}
                                 />
                                 <SuggestionsDropdown
                                     inputValue={tagInput}
