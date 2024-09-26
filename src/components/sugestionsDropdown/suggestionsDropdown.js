@@ -8,7 +8,7 @@ const SuggestionsDropdown = ({ inputValue, onSuggestionClick, selectedTags }) =>
   useEffect(() => {
     if (inputValue.trim() !== '') {
       // Fetch suggestions based on the input value
-      fetch(`${process.env.REACT_APP_API_BASE_URL}/tags/autocomplete?query=${inputValue}`)
+      fetch(`${window.location.protocol}//${window.location.hostname}:8080`+`/tags/autocomplete?query=${inputValue}`)
         .then(response => response.json())
         .then(data => {
           // Filter out selected tags from the suggestions
